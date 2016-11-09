@@ -9,6 +9,11 @@ export class SelectItem {
       this.id = this.text = source;
     }
     if (typeof source === 'object') {
+      for (var prop in source) {
+        if (prop !== 'id' && prop !== 'text' && prop !== 'children') {
+          this[prop] = source[prop];
+        }
+      }
       this.id = source.id || source.text;
       this.text = source.text;
       if (source.children && source.text) {
