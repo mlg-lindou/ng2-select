@@ -242,6 +242,7 @@ export class SelectComponent implements OnInit {
   @Input() public idField:string = 'id';
   @Input() public textField:string = 'text';
   @Input() public multiple:boolean = false;
+  @Input() public showMenuItem:Boolean = true;
 
   @Input()
   public set items(value:Array<any>) {
@@ -499,7 +500,9 @@ export class SelectComponent implements OnInit {
     if (this.options.length > 0) {
       this.behavior.first();
     }
-    this.optionsOpened = true;
+    if (this.showMenuItem) {
+      this.optionsOpened = true;
+    }
   }
 
   private hideOptions():void {
