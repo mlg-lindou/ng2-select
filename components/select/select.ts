@@ -448,7 +448,7 @@ export class SelectComponent implements OnInit {
     if (this.inputMode === true || this._disabled === true) {
       return;
     }
-    if (event.keyCode === 46) {
+    if (event.keyCode === 46 || event.keyCode === 91) {
       event.preventDefault();
       this.inputEvent(event);
       return;
